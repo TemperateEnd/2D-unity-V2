@@ -17,11 +17,11 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        moveSpeed = 1f;
-        enemyHP = 10;
-        damage = 2;
+        moveSpeed = (1f + (playerLevel.playerLvl * 2));
+        enemyHP = (10 + (playerLevel.playerLvl * 2));
+        damage = (2 + (playerLevel.playerLvl * 2));
 
-        attackTime = 5.0f;
+        attackTime = (5.0f / (float)playerLevel.playerLvl / 2f);
         currentTime = attackTime;
 
         zAnimator = this.gameObject.GetComponent<Animator>();

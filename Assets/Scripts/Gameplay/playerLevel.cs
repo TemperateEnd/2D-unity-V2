@@ -14,8 +14,6 @@ public class playerLevel : MonoBehaviour
     public Text xpText;
     public Text levelText;
 
-    public GameObject enemy;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +49,6 @@ public class playerLevel : MonoBehaviour
         playerLvl++;
         xpCurrent -= xpRequired;
         xpRequired *= xpMod;
-
-        enemy.GetComponent<EnemyScript>().enemyHP += 2;
-        enemy.GetComponent<EnemyScript>().damage += 2;
-        enemy.GetComponent<EnemyScript>().moveSpeed += 2;
     }
 }
 
