@@ -5,32 +5,32 @@ using UnityEngine.UI;
 
 public class playerAttack : MonoBehaviour
 {
-    public Slider ammoSlider;
-    public Text ammoText;
+    public Slider ammoSlider; //Declares ammoSlide as a UI slider component
+    public Text ammoText;  //Declares ammoText as a UI text component
 
-    public static int currAmmo;
-    public static int maxAmmo;
-    public static int ammoMags;
-    public static int attackDamage;
+    public static int currAmmo;  //Declares currAmmo as an int 
+    public static int maxAmmo;  //Declares maxAmmo as an int
+    public static int ammoMags;  //Declares ammoMags as an int
+    public static int attackDamage;  //Declares attackDamage as an int
 
-    public GameObject bullet;
+    public GameObject bullet;  //Declares bullet as a GameObject
 
-    public Camera camMain;
-    private Vector3 target;
+    public Camera camMain;  //Declares camMain as a Camera
+    private Vector3 target;  //Declares target as a Vector3
 
-    private Vector3 diff;
-    private float rotZ;
+    private Vector3 diff;  //Declares diff as a Vector3
+    private float rotZ;  //Declares rotZ as a float
 
-    public Weapon equippedWeapon;
-    public GameObject playerGun;
+    public Weapon equippedWeapon;  //Declares equippedWeapon as a Weapon
+    public GameObject playerGun;  //Declares playerGun as a GameObject
 
     // Start is called before the first frame update
     void Start()
     {
-        maxAmmo = equippedWeapon.ammoPerMag;
-        attackDamage = equippedWeapon.fireDamage;
-        currAmmo = maxAmmo;
-        ammoMags = 10;
+        maxAmmo = equippedWeapon.ammoPerMag; //Sets the value for maxAmmo as equal to the value in the ammoPerMag variable for the current weapon equipped
+        attackDamage = equippedWeapon.fireDamage; //Sets the value for attackDamage as equal to the value in the fireDamage variable for the current weapon equipped
+        currAmmo = maxAmmo; //Sets the value of currAmmo as equal to maxAmmo 
+        ammoMags = 10; //Sets the value for ammoMags as 10
     }
 
     // Update is called once per frame

@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public float spawnTimer;
-    public float currentTime;
-    public GameObject enemy;
-    public static GameObject enemyInstance;
+    public float spawnTimer; //Declares spawnTimer as a float
+    public float currentTime; //Declares currentTime as a float
+    public GameObject enemy; //Declares enemy as a GameObject
+    public static GameObject enemyInstance; //Declares enemyInstance as a public static GameObject
 
     void Start()
     {
-        currentTime = spawnTimer;
+        currentTime = spawnTimer; //Sets currentTime to be equal to spawnTimer at first
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        currentTime -= Time.deltaTime;
+        currentTime -= Time.deltaTime; //Subtracts from currentTime overtime
 
-        if(currentTime <= 0)
+        if(currentTime <= 0) //Conditional statement to check if currentTime is less than or equal to 0
         {
-            SpawnEnemies();
-            currentTime = spawnTimer;
+            SpawnEnemies(); //Call Enemy Spawn method
+            currentTime += spawnTimer; //Adds spawnTimer to currentTime
         }
     }
 
-    void SpawnEnemies()
+    void SpawnEnemies() 
     {
-        enemyInstance = Instantiate(enemy, this.transform.position, this.transform.rotation);
+        enemyInstance = Instantiate(enemy, this.transform.position, this.transform.rotation); //Declares enemyInstance as an instance of the enemy GameObject
     }
 }

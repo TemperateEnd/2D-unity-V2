@@ -5,12 +5,12 @@ using UnityEngine;
 public class bulletCollision : MonoBehaviour
 {
     // Update is called once per frame
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision col) //Method to detect collision with other objects
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy") //Conditional statement to check if the object is tagged as an enemy
         {
             col.gameObject.GetComponent<EnemyScript>();
-            col.gameObject.GetComponent<EnemyScript>().enemyHP -= playerAttack.attackDamage;
+            col.gameObject.GetComponent<EnemyScript>().enemyHP -= playerAttack.attackDamage; //Gets EnemyScript component from the Object and subtracts the attackDamage from the enemyHP variable
         }
     }
 }
