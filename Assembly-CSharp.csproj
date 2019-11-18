@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\mainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Gameplay\bulletCollision.cs" />
     <Compile Include="Assets\Scripts\Gameplay\CameraController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnemyScript.cs" />
@@ -74,6 +73,7 @@
     <Compile Include="Assets\Scripts\Gameplay\ScriptableObjects\Weapon.cs" />
     <Compile Include="Assets\Scripts\Gameplay\tutorialScript.cs" />
     <Compile Include="Assets\Scripts\Scenes\gameOverScene.cs" />
+    <Compile Include="Assets\Scripts\Scenes\mainMenuScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/2D-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

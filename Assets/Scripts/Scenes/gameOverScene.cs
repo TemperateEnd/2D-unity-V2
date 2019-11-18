@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameOverScene : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class gameOverScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.anyKey)
+        {
+            SceneManager.LoadScene("mainMenu");
+        }
     }
 }
