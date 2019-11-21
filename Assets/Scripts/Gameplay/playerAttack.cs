@@ -36,11 +36,11 @@ public class playerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerGun.GetComponent<SpriteRenderer>().sprite = equippedWeapon.weaponSprite;
+        playerGun.GetComponent<SpriteRenderer>().sprite = equippedWeapon.weaponSprite; //Changes the sprite of the gun that the player has equipped to the sprite belonging to the weapon
         ammoSlider.maxValue = maxAmmo;
         ammoSlider.value = currAmmo;
 
-        ammoText.text = currAmmo + " / " + ammoMags;
+        ammoText.text = currAmmo + " / " + ammoMags; //Displays values of currAmmo and ammoMags using ammoText component
 
 
         target = camMain.ScreenToWorldPoint(Input.mousePosition);
@@ -51,32 +51,32 @@ public class playerAttack : MonoBehaviour
         Quaternion newRotation = Quaternion.Euler(0f, 0f, rotZ + 270.0f);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * 5.0f);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //Conditional to check if LMB has been pressed
         {
-            currAmmo--;
+            currAmmo--; //Decrements currAmmo value
 
-            GameObject instantiatedBullet = Instantiate(bullet, playerGun.transform.position, playerGun.transform.rotation);
+            GameObject instantiatedBullet = Instantiate(bullet, playerGun.transform.position, playerGun.transform.rotation); //Creates instance of bullet object
 
             instantiatedBullet.GetComponent<Rigidbody>();
-            instantiatedBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector2(0, 10));
+            instantiatedBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector2(0, 10)); //Gets RigidBody component from bullet Prefab and uses velocity component to propel it forward from the player
 
-            Destroy(instantiatedBullet, 1.25f);
+            Destroy(instantiatedBullet, 1.25f); //Destroys the bullet
         }
 
-        if (currAmmo == 0 && ammoMags > 0)
+        if (currAmmo == 0 && ammoMags > 0) //Conditional to check if currAmmo equals 0 and ammoMags is greater than 0
         {
-            Reload();
+            Reload(); //Calls Reload function
         }
 
-        else if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && currAmmo < maxAmmo)
+        else if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && currAmmo < maxAmmo) //Conditional to check if R key has been pressed and ammoMags is greater than 0 and currAmmo is less than maxAmmo
         {
-            Reload();
+            Reload(); //Calls Reload function
         }
 
         void Reload()
         {
-            currAmmo = maxAmmo;
-            ammoMags--;
+            currAmmo = maxAmmo; //Resets currAmmo's value
+            ammoMags--; //Decrements ammoMags
         }
     }
 }

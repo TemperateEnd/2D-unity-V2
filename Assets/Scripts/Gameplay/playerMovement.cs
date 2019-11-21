@@ -20,6 +20,6 @@ public class playerMovement : MonoBehaviour
 
        Vector2 movement =  new Vector2 (horizontal * speed, vertical * speed);
 
-        player.Translate(movement);
+       player.Translate(movement);
     }
 }

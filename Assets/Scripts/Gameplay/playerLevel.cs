@@ -33,10 +33,10 @@ public class playerLevel : MonoBehaviour
             LevelUp();
         }
 
-        if(Input.GetKeyDown(KeyCode.L)) //Dummy function to test Levelling functionality
-        {
-            GiveXP(500);
-        }
+        //if(Input.GetKeyDown(KeyCode.L)) //Dummy function to test Levelling functionality
+        //{
+            //GiveXP(500);
+        //}
     }
 
     public static void GiveXP(int XPToGive) //Function to give XP

@@ -17,11 +17,11 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //Looks for a GameObject tagged as a player and declares it as the value for player
-        moveSpeed = (1f + (playerLevel.playerLvl * 2)); //Sets the moveSpeed as one and has it increase each time the player levels up
+        moveSpeed = (2f + (playerLevel.playerLvl * 2)); //Sets the moveSpeed as one and has it increase each time the player levels up
         enemyHP = (10 + (playerLevel.playerLvl * 2)); //Sets the HP as 10 and has it increase each time the player levels up
         damage = (2 + (playerLevel.playerLvl * 2)); //Sets the damage as 2 and has it increase each time the player levels up
 
-        attackTime = (5.0f / (float)playerLevel.playerLvl / 2f); //Sets the attackTime as 5 and has it decrease each time the player levels up
+        attackTime = (4.0f - (float)playerLevel.playerLvl / 2f); //Sets the attackTime as 4 and has it decrease each time the player levels up
         currentTime = attackTime; //Sets currentTime to equal attackTime
 
         zAnimator = this.gameObject.GetComponent<Animator>(); //Gets the Animator component within the current GameObject and sets it as the value for zAnimator
