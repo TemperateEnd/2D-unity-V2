@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Test
   - Enemy
+  - ammoMagPickup
+  - doubleXP
+  - doubleDamage
   layers:
   - Default
   - TransparentFX
@@ -45,6 +48,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 2861739609
+    locked: 0
+  - name: ammoPickup
+    uniqueID: 3859897819
     locked: 0
   - name: Player
     uniqueID: 3918751395

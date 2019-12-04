@@ -13,16 +13,10 @@ public class tutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tutorialUI.enabled = false;
-        closeBtn.onClick.AddListener(CloseBtn_OnClick);
-        tutorialString = "Welcome to Necrophobia! Use WASD to move; R to reload (Don't do this every time you fire); and LMB to shoot. You gain XP for each kill; and you level up everytime you reach a certain amount of XP. But the zombies level up too!";
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
         Time.timeScale = 0;
         tutorialUI.enabled = true;
-
+        closeBtn.onClick.AddListener(CloseBtn_OnClick);
+        tutorialString = "Welcome to Necrophobia! Use WASD to move; R to reload (Don't do this every time you fire); and LMB to shoot. You gain XP for each kill; and you level up everytime you reach a certain amount of XP. But the zombies level up too!";
         tutorialText.text = tutorialString;
     }
 
@@ -30,7 +24,5 @@ public class tutorialScript : MonoBehaviour
     {
         tutorialUI.enabled = false;
         Time.timeScale = 1;
-
-        Destroy(this.gameObject);
     }
 }

@@ -15,4 +15,5 @@ MonoBehaviour:
   weaponName: M4 Carbine
   weaponSprite: {fileID: 21300000, guid: 653293d6f215be44dbdae95eca7be522, type: 3}
   ammoPerMag: 30
-  fireDamage: 2
+  fireDamage: 12
+  wType: 2

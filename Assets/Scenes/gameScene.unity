@@ -585,7 +585,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -376215901
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1948,7 +1948,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2136016425
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bb8ba842daa046243a7ae8cce4d0ba60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2443,11 +2443,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f236fd2d8df86419819161c48db6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 11400000, guid: 8d61fab31e39664479ac7ba994b44339, type: 2}
+  - {fileID: 11400000, guid: f94a125b8730b5f49989c16e3956f9c8, type: 2}
+  - {fileID: 11400000, guid: 1c310d14adb28464195d9db3eb1487c7, type: 2}
+  - {fileID: 11400000, guid: b7118ff03898c7e47b5e1de71b19c54d, type: 2}
   ammoSlider: {fileID: 933282459}
   ammoText: {fileID: 1980340681}
   bullet: {fileID: 5459541060171685593, guid: a49d8d7edde96fa4e9fb763b6b15a292, type: 3}
+  pellets: {fileID: 4855285826032491058, guid: 751b4143465091f439875fcb3105f7f6, type: 3}
   camMain: {fileID: 693244953}
-  equippedWeapon: {fileID: 11400000, guid: 1c310d14adb28464195d9db3eb1487c7, type: 2}
   playerGun: {fileID: 265223070}
 --- !u!50 &1958573476
 Rigidbody2D:
@@ -2549,7 +2554,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -376215901
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1541d6d41856cd14fb138b34ff2e8eb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

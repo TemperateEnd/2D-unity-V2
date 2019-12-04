@@ -6,23 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class mainMenuScript : MonoBehaviour
 {
-    //public Text inputText;
-    //public float textAlphaValue;
+    //Animator mainMenuAnimator;
 
     //void Start()
     //{
-        //textAlphaValue = 255;
+        //mainMenuAnimator = GetComponentInChildren<Animator>();
     //}
+
     // Update is called once per frame
     void Update()
     {
-        //textAlphaValue -= Time.deltaTime * 2;
-        
-        //if(textAlphaValue == 0)
-        //{
-            //textAlphaValue += 255;
-        //}
-        
+        //mainMenuAnimator.Play("startTitleAnim",0,0);
+
         if(Input.anyKey)
         {
             SceneManager.LoadScene("gameScene");
