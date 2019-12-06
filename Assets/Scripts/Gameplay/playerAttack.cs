@@ -9,8 +9,8 @@ public class playerAttack : MonoBehaviour
     public Slider ammoSlider; //Declares ammoSlide as a UI slider component
     public Text ammoText;  //Declares ammoText as a UI text component
 
-    public static int currAmmo;  //Declares currAmmo as an int 
-    public static int maxAmmo;  //Declares maxAmmo as an int
+    public int currAmmo;  //Declares currAmmo as an int 
+    public int maxAmmo;  //Declares maxAmmo as an int
     public static int ammoMags;  //Declares ammoMags as an int
     public static int attackDamage;  //Declares attackDamage as an int
 
@@ -33,8 +33,8 @@ public class playerAttack : MonoBehaviour
     {
         weaponListIndex = 0;
         equippedWeapon = weaponList[weaponListIndex];
-        
         currAmmo = maxAmmo; //Sets the value of currAmmo as equal to maxAmmo 
+        
         ammoMags = 10; //Sets the value for ammoMags as 10
     }
 
@@ -55,9 +55,9 @@ public class playerAttack : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (weaponListIndex > 0)
+            if (weaponListIndex < 3)
             {
                 weaponListIndex++;
             }

@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class playerHealth : MonoBehaviour
 {
     public static int currHealth;
-    public int maxHealth;
+    private int maxHealth;
     public Slider hpSlider;
     public Text hpText;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 10;
         currHealth = maxHealth;
     }
 

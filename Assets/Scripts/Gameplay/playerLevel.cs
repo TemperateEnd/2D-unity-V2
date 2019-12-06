@@ -14,12 +14,10 @@ public class playerLevel : MonoBehaviour
     public Text xpText;
     public Text levelText;
 
-    public static int xpRate;
-
     // Start is called before the first frame update
     void Start()
     {
-        xpRate = 1;
+        xpMod = 2;
         playerLvl = 0;
     }
 
@@ -44,7 +42,7 @@ public class playerLevel : MonoBehaviour
 
     public static void GiveXP(int XPToGive) //Function to give XP
     {
-        xpCurrent += XPToGive * xpRate;
+        xpCurrent += XPToGive;
     }
 
     void LevelUp() //Function to level player up
@@ -55,5 +53,3 @@ public class playerLevel : MonoBehaviour
         playerAttack.ammoMags += 1;
     }
 }
-
-

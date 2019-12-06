@@ -5,14 +5,17 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     GameObject player; //Declares player as a GameObject
-    public float moveSpeed; //Declares moveSpeed as a float
-    public int damage; //Declares damage as an int
+    private float moveSpeed; //Declares moveSpeed as a float
+    private int damage; //Declares damage as an int
     public int enemyHP; //Declares enemyHP as an int
 
-    public float attackTime; //Declares attackTime as a float
-    public float currentTime; //Declares currentTime as a float
+    private float attackTime; //Declares attackTime as a float
+    private float currentTime; //Declares currentTime as a float
 
     private Animator zAnimator; //Declares zAnimator as an Animator
+
+    public AudioClip attackMP3;
+    public AudioClip deathMP3;
 
     void Start()
     {
@@ -44,6 +47,8 @@ public class EnemyScript : MonoBehaviour
             if (currentTime <= 0) //Conditional statement to check if currentTime is less than or equal to 0
             {
                 Attack(); //Calls Attack method
+                this.gameObject.GetComponent<AudioSource>().clip = attackMP3;
+                this.gameObject.GetComponent<AudioSource>().Play();
                 currentTime += attackTime; //Adds attackTime to currentTime, resetting it.
             }
         }
@@ -61,6 +66,8 @@ public class EnemyScript : MonoBehaviour
 
     void EnemyDeath()
     {
+        this.gameObject.GetComponent<AudioSource>().clip = deathMP3;
+        this.gameObject.GetComponent<AudioSource>().Play();
         Destroy(this.gameObject); //Destroys the current instance of the GameObject
         playerLevel.GiveXP(250); //Calls the GiveXP method within the playerLevel script and passes 250 to it, giving the player 250 XP
     }

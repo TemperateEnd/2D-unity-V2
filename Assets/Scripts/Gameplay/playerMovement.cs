@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public float speed;
+    private float speed;
     public Transform player;
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0.25f;
         player = this.transform;
     }
 
