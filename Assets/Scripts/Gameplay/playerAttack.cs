@@ -88,6 +88,8 @@ public class playerAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)) //Conditional to check if LMB has been pressed
         {
+            playerGun.GetComponent<AudioSource>().clip = equippedWeapon.firingAudio;
+            playerGun.GetComponent<AudioSource>().Play();
             if(equippedWeapon.wType == Weapon.WeaponType.Shotgun)
             {
                 currAmmo -= 7;
@@ -99,6 +101,7 @@ public class playerAttack : MonoBehaviour
 
                 Destroy(instantiatedPellets, 1.25f);
             }
+
             else
             {
                 currAmmo--; //Decrements currAmmo value

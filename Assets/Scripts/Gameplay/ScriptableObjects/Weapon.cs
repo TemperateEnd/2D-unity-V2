@@ -12,4 +12,5 @@ public class Weapon : ScriptableObject
     public int fireDamage;
     public enum WeaponType { Pistol, SMG, AssaultRifle, Shotgun };
     public WeaponType wType;
+    public AudioClip firingAudio;
 }

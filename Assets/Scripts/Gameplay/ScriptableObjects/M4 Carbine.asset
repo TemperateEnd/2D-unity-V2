@@ -17,3 +17,4 @@ MonoBehaviour:
   ammoPerMag: 30
   fireDamage: 12
   wType: 2
+  firingAudio: {fileID: 8300000, guid: 888125fff1f42584383542c0860a9852, type: 3}

@@ -69,7 +69,7 @@ public class EnemyScript : MonoBehaviour
         this.gameObject.GetComponent<AudioSource>().clip = deathMP3;
         this.gameObject.GetComponent<AudioSource>().Play();
         Destroy(this.gameObject); //Destroys the current instance of the GameObject
-        playerLevel.GiveXP(250); //Calls the GiveXP method within the playerLevel script and passes 250 to it, giving the player 250 XP
+        playerLevel.GiveXP(250 + (250 * playerLevel.playerLvl)); //Calls the GiveXP method within the playerLevel script, uses a simple equation to take 250 and add 250 multiplied by the player's level and pass it to the GiveXP function, increasing the XP that the player receives each time the player levels up
     }
 
     public static void LookAt2D(Transform transform, Vector2 target)
