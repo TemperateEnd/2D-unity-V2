@@ -16,7 +16,7 @@ public class tutorialScript : MonoBehaviour
         Time.timeScale = 0;
         tutorialUI.enabled = true;
         closeBtn.onClick.AddListener(CloseBtn_OnClick);
-        tutorialString = "Welcome to Necrophobia! Use WASD to move; R to reload (Don't do this every time you fire); and LMB to shoot. You gain XP for each kill; and you level up everytime you reach a certain amount of XP. But the zombies level up too!";
+        tutorialString = "Welcome to Necrophobia! Use WASD to move; R to reload (Don't do this every time you fire); and LMB to shoot. You gain XP for each kill; and you level up everytime you reach a certain amount of XP. But the zombies level up too! Press Q and E to switch weapons!";
         tutorialText.text = tutorialString;
     }
 
