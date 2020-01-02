@@ -123,7 +123,7 @@ public class playerAttack : MonoBehaviour
 
         void Reload()
         {
-            equippedWeapon.currentAmmo +=  equippedWeapon.ammoPerMag; //Resets currAmmo's value
+            equippedWeapon.currentAmmo =  equippedWeapon.ammoPerMag; //Resets currAmmo's value
             ammoMags--; //Decrements ammoMags
         }
     }

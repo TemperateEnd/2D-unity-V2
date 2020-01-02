@@ -27,7 +27,7 @@ public class mainMenuScript : MonoBehaviour
 
     void LevelSelectionClick()
     {
-        SceneManager.LoadScene("gameScene");
+        SceneManager.LoadScene("levelSelectionMenu");
     }
 
     void CreditsClick()
