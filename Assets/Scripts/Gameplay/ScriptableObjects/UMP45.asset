@@ -16,5 +16,6 @@ MonoBehaviour:
   weaponSprite: {fileID: 21300000, guid: 71244ab1d581dd24ab2f334c6e41c39d, type: 3}
   ammoPerMag: 25
   fireDamage: 6
+  currentAmmo: 25
   wType: 1
   firingAudio: {fileID: 8300000, guid: 48fc49a272221674d877e79e6cac049b, type: 3}

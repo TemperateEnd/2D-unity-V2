@@ -2,25 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class mainMenuScript : MonoBehaviour
 {
-    //Animator mainMenuAnimator;
+    public string[] easterEggStrings;
+    public Text easterEggText;
 
-    //void Start()
-    //{
-        //mainMenuAnimator = GetComponentInChildren<Animator>();
-    //}
+    public Button lvlSelection;
+    public Button credits;
+    public Button exit;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        //mainMenuAnimator.Play("startTitleAnim",0,0);
+        System.Random randStr = new System.Random();
+        int randMess = randStr.Next(easterEggStrings.Length);
+        string message = easterEggStrings[randMess];
+        easterEggText.text = message;
 
-        if(Input.anyKey)
-        {
-            SceneManager.LoadScene("gameScene");
-        }
+        lvlSelection.onClick.AddListener(LevelSelectionClick);
+        credits.onClick.AddListener(CreditsClick);
+        exit.onClick.AddListener(ExitClick);
+    }
+
+    void LevelSelectionClick()
+    {
+        SceneManager.LoadScene("gameScene");
+    }
+
+    void CreditsClick()
+    {
+        SceneManager.LoadScene("credits");
+    }
+
+    void ExitClick()
+    {
+        Application.Quit();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class levelSelectionMenuScript : MonoBehaviour
 {
@@ -19,29 +20,23 @@ public class levelSelectionMenuScript : MonoBehaviour
         jungle.GetComponent<Button>().onClick.AddListener(JungleImageOnClick);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void TutorialImageOnClick()
     {
-
+        SceneManager.LoadScene("tutorialLevel");
     }
 
     void OfficeImageOnClick()
     {
-
+        SceneManager.LoadScene("officeLevel");
     }
 
     void ForestImageOnClick()
     {
-
+        SceneManager.LoadScene("forestLevel");
     }
 
     void JungleImageOnClick()
     {
-
+        SceneManager.LoadScene("jungleLevel");
     }
 }

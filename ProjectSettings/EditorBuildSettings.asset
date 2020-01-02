@@ -12,9 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/levelSelectionMenu.unity
     guid: 1b1b90e78b541ec4f9554a9f29995462
   - enabled: 1
-    path: Assets/Scenes/levelS/tutorialLevel.unity
+    path: Assets/Scenes/Levels/tutorialLevel.unity
     guid: 2ff251cffd98c3a4198df79141d73268
+  - enabled: 1
+    path: Assets/Scenes/Levels/officeLevel.unity
+    guid: 27a886f820470ee4d9b06fa71135c368
+  - enabled: 1
+    path: Assets/Scenes/Levels/forestLevel.unity
+    guid: 670a31884fee25741ae48655a3fd6a0f
+  - enabled: 1
+    path: Assets/Scenes/Levels/jungleLevel.unity
+    guid: d250222f4c5d94c4b874cd2378ca99cf
   - enabled: 1
     path: Assets/Scenes/Menus/gameOverScene.unity
     guid: ce024a2be16e42c46a9015b0132d04c3
+  - enabled: 1
+    path: Assets/Scenes/Menus/credits.unity
+    guid: 704b9e6a0e32d12458a63f5e8317cf00
   m_configObjects: {}

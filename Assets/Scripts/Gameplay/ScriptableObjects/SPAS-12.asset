@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: SPAS-12
   weaponSprite: {fileID: 21300000, guid: 44525bcacb9da5547bf3d0b5d640a553, type: 3}
-  ammoPerMag: 36
+  ammoPerMag: 42
   fireDamage: 21
+  currentAmmo: 42
   wType: 3
   firingAudio: {fileID: 8300000, guid: 16227691f43efc446888e21dc0a53bd9, type: 3}

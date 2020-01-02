@@ -33,7 +33,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) >= 1 && Vector2.Distance(this.gameObject.transform.position, player.transform.position) <= 20) //Conditional statement to check if the player is within a certain distance from the enemy
+        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) >= 1 && Vector2.Distance(this.gameObject.transform.position, player.transform.position) <= 1000) //Conditional statement to check if the player is within a certain distance from the enemy
         {
             LookAt2D(this.transform, player.transform.position); // Calls a LookAt Method to get the enemy to look at the player
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime); //Has the GameObject move towards the player 

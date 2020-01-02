@@ -9,8 +9,6 @@ public class playerAttack : MonoBehaviour
     public Slider ammoSlider; //Declares ammoSlide as a UI slider component
     public Text ammoText;  //Declares ammoText as a UI text component
 
-    public int currAmmo;  //Declares currAmmo as an int 
-    public int maxAmmo;  //Declares maxAmmo as an int
     public static int ammoMags;  //Declares ammoMags as an int
     public static int attackDamage;  //Declares attackDamage as an int
 
@@ -33,7 +31,6 @@ public class playerAttack : MonoBehaviour
     {
         weaponListIndex = 0;
         equippedWeapon = weaponList[weaponListIndex];
-        currAmmo = maxAmmo; //Sets the value of currAmmo as equal to maxAmmo 
         
         ammoMags = 10; //Sets the value for ammoMags as 10
     }
@@ -68,14 +65,13 @@ public class playerAttack : MonoBehaviour
             }
         }
 
-        equippedWeapon = weaponList[weaponListIndex];
-        maxAmmo = equippedWeapon.ammoPerMag; //Sets the value for maxAmmo as equal to the value in the ammoPerMag variable for the current weapon equipped
+        equippedWeapon = weaponList[weaponListIndex]; //Equipped weapon changes depending where in the weaponList array they currently are
         attackDamage = equippedWeapon.fireDamage; //Sets the value for attackDamage as equal to the value in the fireDamage variable for the current weapon equipped
         playerGun.GetComponent<SpriteRenderer>().sprite = equippedWeapon.weaponSprite; //Changes the sprite of the gun that the player has equipped to the sprite belonging to the weapon
-        ammoSlider.maxValue = maxAmmo;
-        ammoSlider.value = currAmmo;
+        ammoSlider.maxValue = equippedWeapon.ammoPerMag; //Takes the ammoPerMag value for the weapon equipped and sets it as the max value for the ammoSlider
+        ammoSlider.value = equippedWeapon.currentAmmo; //Takes the currentAmmo value for the weapon equipped and sets it as the current value for the ammoSlider
 
-        ammoText.text = currAmmo + " / " + ammoMags; //Displays values of currAmmo and ammoMags using ammoText component
+        ammoText.text = equippedWeapon.currentAmmo + " / " + ammoMags; //Displays values of currAmmo and ammoMags using ammoText component
 
 
         target = camMain.ScreenToWorldPoint(Input.mousePosition);
@@ -92,7 +88,7 @@ public class playerAttack : MonoBehaviour
             playerGun.GetComponent<AudioSource>().Play();
             if(equippedWeapon.wType == Weapon.WeaponType.Shotgun)
             {
-                currAmmo -= 7;
+                equippedWeapon.currentAmmo -= 7; //Subtracts 7 from the currentAmmo value
 
                 GameObject instantiatedPellets = Instantiate(pellets, playerGun.transform.position, playerGun.transform.rotation);
 
@@ -104,7 +100,7 @@ public class playerAttack : MonoBehaviour
 
             else
             {
-                currAmmo--; //Decrements currAmmo value
+                equippedWeapon.currentAmmo--; //Decrements currAmmo value
 
                 GameObject instantiatedBullet = Instantiate(bullet, playerGun.transform.position, playerGun.transform.rotation); //Creates instance of bullet object
 
@@ -115,19 +111,19 @@ public class playerAttack : MonoBehaviour
             }
         }
 
-        if (currAmmo == 0 && ammoMags > 0) //Conditional to check if currAmmo equals 0 and ammoMags is greater than 0
+        if (equippedWeapon.currentAmmo == 0 && ammoMags > 0) //Conditional to check if currAmmo equals 0 and ammoMags is greater than 0
         {
             Reload(); //Calls Reload function
         }
 
-        else if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && currAmmo < maxAmmo) //Conditional to check if R key has been pressed and ammoMags is greater than 0 and currAmmo is less than maxAmmo
+        else if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && equippedWeapon.currentAmmo < equippedWeapon.ammoPerMag) //Conditional to check if R key has been pressed and ammoMags is greater than 0 and currAmmo is less than maxAmmo
         {
             Reload(); //Calls Reload function
         }
 
         void Reload()
         {
-            currAmmo = maxAmmo; //Resets currAmmo's value
+            equippedWeapon.currentAmmo +=  equippedWeapon.ammoPerMag; //Resets currAmmo's value
             ammoMags--; //Decrements ammoMags
         }
     }

@@ -49,6 +49,9 @@ TagManager:
   - name: Ground
     uniqueID: 2861739609
     locked: 0
+  - name: Misc objects
+    uniqueID: 1670566449
+    locked: 0
   - name: ammoPickup
     uniqueID: 3859897819
     locked: 0
