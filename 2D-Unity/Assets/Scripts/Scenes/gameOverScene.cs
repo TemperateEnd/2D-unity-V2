@@ -19,6 +19,8 @@ public class gameOverScene : MonoBehaviour
     {
         if(Input.anyKey)
         {
+            playerLevel.playerLvl = 0;
+            playerLevel.xpCurrent = 0;
             SceneManager.LoadScene("mainMenu");
         }
     }

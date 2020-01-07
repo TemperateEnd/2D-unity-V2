@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class playerAttack : MonoBehaviour
 {
-    public Weapon[] weaponList;
+    public Weapon[] weaponList; //Array to store weapons of player
     public Slider ammoSlider; //Declares ammoSlide as a UI slider component
     public Text ammoText;  //Declares ammoText as a UI text component
 
@@ -24,7 +24,7 @@ public class playerAttack : MonoBehaviour
     Weapon equippedWeapon;  //Declares equippedWeapon as a Weapon
     public GameObject playerGun;  //Declares playerGun as a GameObject
 
-    int weaponListIndex;
+    int weaponListIndex; //Int to store position in weaponList
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +82,7 @@ public class playerAttack : MonoBehaviour
         Quaternion newRotation = Quaternion.Euler(0f, 0f, rotZ + 270.0f);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * 5.0f);
 
-        if (Input.GetMouseButtonDown(0)) //Conditional to check if LMB has been pressed
+        if (Input.GetMouseButtonDown(0) && equippedWeapon.currentAmmo > 0) //Conditional to check if LMB has been pressed
         {
             playerGun.GetComponent<AudioSource>().clip = equippedWeapon.firingAudio;
             playerGun.GetComponent<AudioSource>().Play();
@@ -95,7 +95,7 @@ public class playerAttack : MonoBehaviour
                 instantiatedPellets.GetComponent<Rigidbody>();
                 instantiatedPellets.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector2(0, 20));
 
-                Destroy(instantiatedPellets, 1.25f);
+                Destroy(instantiatedPellets, 0.25f);
             }
 
             else
@@ -105,18 +105,13 @@ public class playerAttack : MonoBehaviour
                 GameObject instantiatedBullet = Instantiate(bullet, playerGun.transform.position, playerGun.transform.rotation); //Creates instance of bullet object
 
                 instantiatedBullet.GetComponent<Rigidbody>();
-                instantiatedBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector2(0, 10)); //Gets RigidBody component from bullet Prefab and uses velocity component to propel it forward from the player
+                instantiatedBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector2(0, 50)); //Gets RigidBody component from bullet Prefab and uses velocity component to propel it forward from the player
 
                 Destroy(instantiatedBullet, 1.25f); //Destroys the bullet
             }
         }
 
-        if (equippedWeapon.currentAmmo == 0 && ammoMags > 0) //Conditional to check if currAmmo equals 0 and ammoMags is greater than 0
-        {
-            Reload(); //Calls Reload function
-        }
-
-        else if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && equippedWeapon.currentAmmo < equippedWeapon.ammoPerMag) //Conditional to check if R key has been pressed and ammoMags is greater than 0 and currAmmo is less than maxAmmo
+        if(Input.GetKeyDown(KeyCode.R) && ammoMags > 0 && equippedWeapon.currentAmmo == 0) //Conditional to check if R key has been pressed and ammoMags is greater than 0 and currAmmo is equal to 0
         {
             Reload(); //Calls Reload function
         }
