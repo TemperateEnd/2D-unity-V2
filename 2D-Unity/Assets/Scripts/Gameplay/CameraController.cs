@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player; //Declares player as a GameObject variable
 
     private Vector3 offset;
 

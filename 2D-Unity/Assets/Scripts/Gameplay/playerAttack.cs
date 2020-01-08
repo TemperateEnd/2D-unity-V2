@@ -66,7 +66,7 @@ public class playerAttack : MonoBehaviour
         }
 
         equippedWeapon = weaponList[weaponListIndex]; //Equipped weapon changes depending where in the weaponList array they currently are
-        attackDamage = equippedWeapon.fireDamage; //Sets the value for attackDamage as equal to the value in the fireDamage variable for the current weapon equipped
+        attackDamage = (equippedWeapon.fireDamage + (1 * playerLevel.playerLvl)); //Sets the value for attackDamage as equal to the value in the fireDamage variable for the current weapon equipped + 1 for each time the player levels up
         playerGun.GetComponent<SpriteRenderer>().sprite = equippedWeapon.weaponSprite; //Changes the sprite of the gun that the player has equipped to the sprite belonging to the weapon
         ammoSlider.maxValue = equippedWeapon.ammoPerMag; //Takes the ammoPerMag value for the weapon equipped and sets it as the max value for the ammoSlider
         ammoSlider.value = equippedWeapon.currentAmmo; //Takes the currentAmmo value for the weapon equipped and sets it as the current value for the ammoSlider
